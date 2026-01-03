@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin, User as UserIcon, Sparkles, BookOpen, FileText, Newspaper, Building2, IdCard, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, User as UserIcon, BookOpen, FileText, Newspaper, Building2, IdCard, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface HeroProps {
@@ -29,9 +29,6 @@ export const Hero: React.FC<HeroProps> = ({ data, publicationStats, socialLinks 
         if (link.startsWith('http://') || link.startsWith('https://')) return link;
         return `https://${link}`;
     };
-
-    const emailRaw = socialLinks?.mail || data['Official Email'] || '';
-    const email = emailRaw; // Use raw for display or logic if needed, but for href we need mailto
 
     // For hrefs
     const githubLink = ensureProtocol(socialLinks?.github || '#');
